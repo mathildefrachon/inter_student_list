@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Interactive </title>
 </head>
@@ -15,10 +16,21 @@
     <header>
         <h1>FRONTEND DESIGN STUDENT LIST</h1>
         <nav>
-            <a href="#">BY FIRSTNAME</a>
-            <a href="#">BY LASTNAME</a>
+            <a id="firstname" href="#">BY FIRSTNAME</a>
+            <!--dont use id or class in a template we can use data attribute : data-firstname 
+            then in the javascript, querySelector("[data-firstname]")-->
+            <a id="lastname" href="#">BY LASTNAME</a>
         </nav>
     </header>
+
+    <div id="modal" class="hidden">
+        <h2 class="modal_name"></h2>
+        <p> THIS IS A FAKE CONTENT ABOUT THIS STUDENT </p>
+        <img class="pic" src="undraw_designer_kcp7.svg">
+        <img class="cross" src="interactive_student_list-09.png">
+        <img class="next" src="next.png">
+        <img class="previous" src="next.png">
+    </div>
 
 
 
@@ -29,11 +41,15 @@
 
     <template id="list_template">
         <article>
+            <!--onmouseover="showIcon()"-->
             <h2 id="student_name"></h2>
+            <img class="icon" id="delete" src="interactive_student_list-07.png">
+            <img class="icon plus" id="plus" src="interactive_student_list-08.png">
         </article>
     </template>
 
     <script src="script.js"></script>
+    <script src="frontend.js"></script>
 
 </body>
 
